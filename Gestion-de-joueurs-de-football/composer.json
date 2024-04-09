@@ -112,6 +112,9 @@
                 "database_host": "DATABASE_HOST",
                 "database_port": "DATABASE_PORT"
             }
+        },
+        "paas" : {
+            "nginx-includes": ["./nginx.conf"]
         }
     }
 }
