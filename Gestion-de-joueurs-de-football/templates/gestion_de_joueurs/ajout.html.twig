@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout joueur{% endblock %}
+
+{% form_theme formJoueur 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+<div class="container col-md-6" style="display: flex;flex-direction: column;">
+    <h1>{{ titre }} d'un joueur</h1>
+
+    {{ form_start(formJoueur) }}
+
+    {{ form_row(formJoueur.nom, {'attr':{'placeholder' : "nom du joueur"}}) }}
+    {{ form_row(formJoueur.dateDeNaissance) }}
+    {{ form_row(formJoueur.nationalite, {'attr':{'placeholder' : "nationalité du joueur"}}) }}
+    {{ form_row(formJoueur.national) }}
+    {{ form_row(formJoueur.club) }}
+    {{ form_row(formJoueur.parcours, {'attr':{'placeholder' : "parcours du joueur"}}) }}
+    {{ form_row(formJoueur.nombreDeBut, {'attr':{'placeholder' : "nombre de but du joueur"}}) }}
+
+    <div class="XD" style="text-align:center;">
+        <button class="btn btn-success" type="submit" style="float: center;">{{ buttontext }}</button>
+    </div>
+    
+    {{ form_end(formJoueur) }}
+</div>
+    
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container" style="display:flex;flex-direction:column;align-items: center;justify-content: space-evenly;" >
+        <h3>Fiche du joueur</h3>
+        <div class="card" style="width: 50%;">
+            <div class="card-body">
+                <p > {{ joueur.nom }}</p>
+                <p > {{ joueur.dateDeNaissance | date('d/m/Y') }}</p>
+                <p > {{ joueur.nationalite }}</p>
+                <hr>
+                <p>Equipe nationale:  {{ joueur.national.nom }}</p>
+                <p>Club: {{ joueur.club.nomClub }}</p>
+                <p>Parcours : {{ joueur.parcours }}</p>
+                <p>nombre de buts : {{ joueur.nombreDeBut }}</p>
+                <hr>
+                <div style="display:flex;justify-content: space-evenly;">
+                    <a href="{{ path('joueur_edit', { 'id': joueur.id }) }}" class="btn btn-secondary"><i style="font-size:24px" class="fa">&#xf044;</i></a>
+                    <a href="{{ path('joueur_supprimer', { 'id': joueur.id }) }}" class="btn btn-danger"><i style="font-size:24px" class="fa">&#xf1f8;</i></a>                
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout équipe national{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 900px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <div class="container col-md-6" style="display: flex;flex-direction: column;">
+        <h1>{{ titre }} d'une équipe</h1>
+
+        {{ form_start(formNational) }}
+
+        {{ form_row(formNational.nom, {'attr':{'placeholder' : "nom de l'équipe"}}) }}
+        {{ form_row(formNational.description, {'attr':{'placeholder' : "description de l'équipe"}}) }}
+
+
+        <div class="XD" style="text-align:center;">
+            <button class="btn btn-success" type="submit" style="float: center;">{{ buttontext }}</button>
+        </div>
+        
+        {{ form_end(formNational) }}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipes Nationaux{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 1000px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <div class="container" >
+        <h1 style="text-align:center;">Liste des équipes nationaux</h1>
+        <div class="container" style="display:flex; justify-content:space-around; flex-wrap: wrap;">
+            {% for national in nationals %}
+                <div class="card mb-5" style="width: 18rem;">
+                    <div class="card-header">
+                        <h5 style="text-align:center;">{{ national.nom}}</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{ national.description }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{ path('national_edit', { 'id': national.id }) }}" class="btn btn-secondary">Modifier</a>
+                        <a href="{{ path('national_supprimer', { 'id': national.id }) }}" class="btn btn-danger">Supprimer</a>
+                    </div>
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
