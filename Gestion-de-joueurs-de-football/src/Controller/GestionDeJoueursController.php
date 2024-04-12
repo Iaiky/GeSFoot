@@ -115,7 +115,7 @@ class GestionDeJoueursController extends AbstractController
         $manager->remove($club);
         $manager->flush();
 
-        return $this->redirectToRoute('app_gestion_de_joueurs');
+        return $this->redirectToRoute('app_gestion_de_joueurs', ['tri' => 1]);
     }
 
     #[Route('/gestion/de/joueurs/club/{id}', name: 'joueur_par_club')]
